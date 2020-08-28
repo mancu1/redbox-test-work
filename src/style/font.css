@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
     font-family: 'Montserrat', sans-serif;
+    color: #211536;
 }
 
 .title {
@@ -11,6 +12,9 @@
     line-height: 49px;
 
     color: var(--dark-fill-color);
+
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .form-title {

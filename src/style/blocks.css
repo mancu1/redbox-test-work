@@ -1,0 +1,15 @@
+
+body {
+    background-color: #F8F8FA;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 1200px;
+    padding: 50px 30px;
+    background-color: #ffffff;
+}
