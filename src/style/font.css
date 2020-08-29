@@ -41,6 +41,10 @@
 /* icons */
 [class*=" el-icon-"], [class^=el-icon-] {
     text-shadow: black 0 0 2px;
-    font-weight: 600;
     color: #9B63F8 !important;
+}
+
+.dark-icon {
+    font-size: 36px;
+    color: #351767!important;
 }
