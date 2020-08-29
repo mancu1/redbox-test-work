@@ -1,13 +1,13 @@
 <template>
   <el-row>
     <el-col :span="6">
-      <div class="title mt-10 mb-5 ml-1">
+      <div class="title mt-10 mb-5">
         Шаг 1
       </div>
     </el-col>
-    <el-col class="content" :span="24">
+    <el-col class="content dart-text" :span="24">
       <el-col class="form-block">
-        <div class="form-title">
+        <div class="form-title mt-2">
           Информация об организаторе
         </div>
         <div>
@@ -48,12 +48,7 @@
           Фотография
         </div>
         <div>
-          <el-upload
-            class="photo-uploader"
-            action="#"
-            list-type="picture-card"
-            :auto-upload="false"
-          >
+          <el-upload action="#" list-type="picture-card" :auto-upload="false">
             <i slot="default" class="el-icon-plus"></i>
             <div slot="file" slot-scope="{ file }">
               <img
@@ -184,14 +179,3 @@ export default {
   name: "FirstStep"
 };
 </script>
-
-<style>
-.added-date-block {
-  padding: 25px 20px;
-  background-color: rgba(205, 177, 251, 0.1);
-}
-
-.full-field-w {
-  width: 100% !important;
-}
-</style>
