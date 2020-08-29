@@ -1,4 +1,9 @@
 
+/*TODO delete this before push*/
+html {
+    overflow: overlay;
+}
+
 body {
     background-color: #F8F8FA;
 }
@@ -12,4 +17,31 @@ body {
     max-width: 1200px;
     padding: 50px 30px;
     background-color: #ffffff;
+}
+
+.form-block {
+    margin-bottom: 40px;
+}
+
+.el-input input {
+    height: 58px;
+    border: 1px solid #CDB1FB;
+}
+.el-input input:hover {
+    border: 1px solid #b58bf9;
+}
+.el-input input:focus {
+    border: 1px solid #9B63F8;
+}
+
+
+.el-textarea__inner {
+    min-height:  193px!important;
+    border: 1px solid #CDB1FB;
+}
+.el-textarea__inner:hover {
+    border: 1px solid #b58bf9;
+}
+.el-textarea__inner:focus {
+    border: 1px solid #9B63F8;
 }
