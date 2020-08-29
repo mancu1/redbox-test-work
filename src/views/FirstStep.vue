@@ -11,6 +11,7 @@
       <TitleForm />
       <PhotoUploadForm />
       <DescriptionForm />
+      <ReadOnlyDateAndTime />
       <DateAndTimeForm />
       <RatingAndAddressForm />
       <ConfirmForm />
@@ -27,10 +28,12 @@ import DescriptionForm from "@/components/Forms/DescriptionForm";
 import DateAndTimeForm from "@/components/Forms/DateAndTimeForm";
 import RatingAndAddressForm from "@/components/Forms/RatingAndAddressForm";
 import ConfirmForm from "@/components/Forms/ConfirmForm";
+import ReadOnlyDateAndTime from "@/components/Forms/ReadOnlyDateAndTime";
 
 export default {
   name: "FirstStep",
   components: {
+    ReadOnlyDateAndTime,
     ConfirmForm,
     RatingAndAddressForm,
     DateAndTimeForm,
