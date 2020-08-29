@@ -6,11 +6,15 @@
     <el-row :gutter="20">
       <el-col :xs="24" :md="8">
         <div class="text-field-label mt-3 mb-1">Телефон</div>
-        <el-input v-model="phoneNumber"></el-input>
+        <el-input
+          type="tel"
+          v-mask="'+7 (###) ###-##-##'"
+          v-model="phoneNumber"
+        ></el-input>
       </el-col>
       <el-col :xs="24" :md="8">
         <div class="text-field-label mt-3 mb-1">E-mail</div>
-        <el-input v-model="email"></el-input>
+        <el-input type="email" v-model="email"></el-input>
       </el-col>
       <el-col :xs="24" :md="8">
         <div class="text-field-label mt-3 mb-1">Город организатора</div>
