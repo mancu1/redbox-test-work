@@ -5,14 +5,27 @@
     </div>
     <div>
       <div class="text-field-label mt-3 mb-1">Название</div>
-      <el-input></el-input>
+      <el-input v-model="eventTitle"></el-input>
     </div>
   </el-col>
 </template>
 
 <script>
 export default {
-  name: "TitleForm"
+  name: "TitleForm",
+  computed: {
+    eventTitle: {
+      get() {
+        return this.$store.getters.getForm.eventTitle;
+      },
+      set(newValue) {
+        this.$store.commit("setFormData", {
+          fieldName: "eventTitle",
+          value: newValue
+        });
+      }
+    }
+  }
 };
 </script>
 

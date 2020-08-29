@@ -6,15 +6,15 @@
     <el-row :gutter="20">
       <el-col :xs="24" :md="8">
         <div class="text-field-label mt-3 mb-1">Телефон</div>
-        <el-input></el-input>
+        <el-input v-model="phoneNumber"></el-input>
       </el-col>
       <el-col :xs="24" :md="8">
         <div class="text-field-label mt-3 mb-1">E-mail</div>
-        <el-input></el-input>
+        <el-input v-model="email"></el-input>
       </el-col>
       <el-col :xs="24" :md="8">
         <div class="text-field-label mt-3 mb-1">Город организатора</div>
-        <el-input></el-input>
+        <el-input v-model="organizeCity"></el-input>
       </el-col>
     </el-row>
   </el-col>
@@ -22,7 +22,42 @@
 
 <script>
 export default {
-  name: "ContactDetailsForm"
+  name: "ContactDetailsForm",
+  computed: {
+    phoneNumber: {
+      get() {
+        return this.$store.getters.getForm.phoneNumber;
+      },
+      set(newValue) {
+        this.$store.commit("setFormData", {
+          fieldName: "phoneNumber",
+          value: newValue
+        });
+      }
+    },
+    email: {
+      get() {
+        return this.$store.getters.getForm.email;
+      },
+      set(newValue) {
+        this.$store.commit("setFormData", {
+          fieldName: "email",
+          value: newValue
+        });
+      }
+    },
+    organizeCity: {
+      get() {
+        return this.$store.getters.getForm.organizeCity;
+      },
+      set(newValue) {
+        this.$store.commit("setFormData", {
+          fieldName: "organizeCity",
+          value: newValue
+        });
+      }
+    }
+  }
 };
 </script>
 
