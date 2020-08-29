@@ -39,6 +39,14 @@ export default {
     TitleForm,
     ContactDetailsForm,
     OrganizerInfoForm: OrganizerInfoForm
+  },
+  created() {
+    this.$store.dispatch("fetchRating");
+  },
+
+  beforeRouteUpdate(to, from, next) {
+    this.$store.dispatch("fetchRating");
+    next();
   }
 };
 </script>
