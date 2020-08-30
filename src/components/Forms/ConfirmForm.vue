@@ -2,7 +2,10 @@
   <el-col class="form-block">
     <el-row :gutter="40">
       <el-col class="mt-1" :sm="12" :md="10" :lg="7">
-        <el-button class="full-field-w text-field-label form-btn" plain
+        <el-button
+          class="full-field-w text-field-label form-btn"
+          plain
+          @click="resetForm"
           >Оменить</el-button
         >
       </el-col>
@@ -20,9 +23,24 @@
 
 <script>
 export default {
+  props: {
+    validate: {
+      type: Function,
+      required: true
+    }
+  },
   name: "ConfirmForm",
   methods: {
     submit() {
+      this.validate(() => {
+        this.$store.commit("setValidation", true);
+        this.goNext();
+      });
+    },
+    resetForm() {
+      this.$store.commit("resetForm");
+    },
+    goNext() {
       this.$router.push("/result");
     }
   }

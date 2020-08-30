@@ -2,7 +2,15 @@
   <el-col class="form-block mb-5">
     <div>
       <div class="text-field-label mb-1">Подробное описание</div>
-      <el-input type="textarea" v-model="eventDescription"></el-input>
+      <ValidationProvider rules="required">
+        <el-form-item
+          label-width="0"
+          slot-scope="{ errors }"
+          :error="errors[0]"
+        >
+          <el-input type="textarea" v-model="eventDescription"></el-input>
+        </el-form-item>
+      </ValidationProvider>
     </div>
   </el-col>
 </template>

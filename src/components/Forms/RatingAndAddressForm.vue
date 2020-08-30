@@ -3,19 +3,35 @@
     <el-row :gutter="20">
       <el-col :xs="24" :sm="12">
         <div class="text-field-label mt-1 mb-1">Рейтинг мероприятия</div>
-        <el-select class="full-field-w" v-model="rating">
-          <el-option
-            v-for="availableRating in ratings"
-            :key="availableRating.id"
-            :label="availableRating.title"
-            :value="availableRating.title"
+        <ValidationProvider rules="required">
+          <el-form-item
+            label-width="0"
+            slot-scope="{ errors }"
+            :error="errors[0]"
           >
-          </el-option>
-        </el-select>
+            <el-select class="full-field-w" v-model="rating">
+              <el-option
+                v-for="availableRating in ratings"
+                :key="availableRating.id"
+                :label="availableRating.title"
+                :value="availableRating.title"
+              >
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </ValidationProvider>
       </el-col>
       <el-col :xs="24" :sm="12">
         <div class="text-field-label mt-1 mb-1">Адрес мероприятия</div>
-        <el-input v-model="address"></el-input>
+        <ValidationProvider rules="required">
+          <el-form-item
+            label-width="0"
+            slot-scope="{ errors }"
+            :error="errors[0]"
+          >
+            <el-input v-model="address"></el-input>
+          </el-form-item>
+        </ValidationProvider>
       </el-col>
     </el-row>
   </el-col>

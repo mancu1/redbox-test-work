@@ -5,7 +5,15 @@
     </div>
     <div>
       <div class="text-field-label mt-3 mb-1">Название</div>
-      <el-input v-model="eventTitle"></el-input>
+      <ValidationProvider rules="required">
+        <el-form-item
+          label-width="0"
+          slot-scope="{ errors }"
+          :error="errors[0]"
+        >
+          <el-input v-model="eventTitle"></el-input>
+        </el-form-item>
+      </ValidationProvider>
     </div>
   </el-col>
 </template>

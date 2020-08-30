@@ -6,15 +6,19 @@
       </div>
     </el-col>
     <el-col class="content dart-text" :span="24">
-      <OrganizerInfoForm />
-      <ContactDetailsForm />
-      <TitleForm />
-      <PhotoUploadForm />
-      <DescriptionForm />
-      <ReadOnlyDateAndTime />
-      <DateAndTimeForm />
-      <RatingAndAddressForm />
-      <ConfirmForm />
+      <ValidationObserver>
+        <el-form ref="form" slot-scope="{ validate }" label-width="120px">
+          <OrganizerInfoForm />
+          <ContactDetailsForm />
+          <TitleForm />
+          <PhotoUploadForm />
+          <DescriptionForm />
+          <ReadOnlyDateAndTime />
+          <DateAndTimeForm />
+          <RatingAndAddressForm />
+          <ConfirmForm :validate="validate" />
+        </el-form>
+      </ValidationObserver>
     </el-col>
   </el-row>
 </template>

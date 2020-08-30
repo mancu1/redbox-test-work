@@ -6,19 +6,43 @@
     <el-row :gutter="20">
       <el-col :xs="24" :md="8">
         <div class="text-field-label mt-3 mb-1">Телефон</div>
-        <el-input
-          type="tel"
-          v-mask="'+7 (###) ###-##-##'"
-          v-model="phoneNumber"
-        ></el-input>
+        <ValidationProvider rules="required|phone">
+          <el-form-item
+            label-width="0"
+            slot-scope="{ errors }"
+            :error="errors[0]"
+          >
+            <el-input
+              type="tel"
+              v-mask="'+7 (9##) ###-##-##'"
+              v-model="phoneNumber"
+            ></el-input>
+          </el-form-item>
+        </ValidationProvider>
       </el-col>
       <el-col :xs="24" :md="8">
         <div class="text-field-label mt-3 mb-1">E-mail</div>
-        <el-input type="email" v-model="email"></el-input>
+        <ValidationProvider name="email" rules="required|email">
+          <el-form-item
+            label-width="0"
+            slot-scope="{ errors }"
+            :error="errors[0]"
+          >
+            <el-input type="email" v-model="email"></el-input>
+          </el-form-item>
+        </ValidationProvider>
       </el-col>
       <el-col :xs="24" :md="8">
         <div class="text-field-label mt-3 mb-1">Город организатора</div>
-        <el-input v-model="organizeCity"></el-input>
+        <ValidationProvider rules="required">
+          <el-form-item
+            label-width="0"
+            slot-scope="{ errors }"
+            :error="errors[0]"
+          >
+            <el-input v-model="organizeCity"></el-input>
+          </el-form-item>
+        </ValidationProvider>
       </el-col>
     </el-row>
   </el-col>

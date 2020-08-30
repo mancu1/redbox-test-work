@@ -4,31 +4,42 @@
       Фотография
     </div>
     <div>
-      <Uploader
-        action="#"
-        ref="upl"
-        accept="image/*"
-        list-type="picture-card"
-        :auto-upload="false"
-        :on-change="uploadFile"
-        :file-list="files"
-        :on-remove="removeFile"
-      >
-        <i slot="default" class="el-icon-camera dark-icon"></i>
-        <div class="file-block mr-5" slot="file" slot-scope="{ file }">
-          <div class="bg-img" :style="`background-image: url(${file.url});`">
-            <div class="close-button-bg absolute-button"></div>
-          </div>
-          <div>
-            <span class="absolute-button close-button">
-              <i
-                @click="$refs.upl.handleRemove(file)"
-                class="dark-icon el-icon-error"
-              ></i>
-            </span>
-          </div>
-        </div>
-      </Uploader>
+      <ValidationProvider ref="provider" rules="required">
+        <el-form-item
+          label-width="0"
+          slot-scope="{ errors }"
+          :error="errors[0]"
+        >
+          <Uploader
+            action="#"
+            ref="upl"
+            accept="image/*"
+            list-type="picture-card"
+            :auto-upload="false"
+            :on-change="uploadFile"
+            :file-list="files"
+            :on-remove="removeFile"
+          >
+            <i slot="default" class="el-icon-camera dark-icon"></i>
+            <div class="file-block mr-5" slot="file" slot-scope="{ file }">
+              <div
+                class="bg-img"
+                :style="`background-image: url(${file.url});`"
+              >
+                <div class="close-button-bg absolute-button"></div>
+              </div>
+              <div>
+                <span class="absolute-button close-button">
+                  <i
+                    @click="$refs.upl.handleRemove(file)"
+                    class="dark-icon el-icon-error"
+                  ></i>
+                </span>
+              </div>
+            </div>
+          </Uploader>
+        </el-form-item>
+      </ValidationProvider>
     </div>
   </el-col>
 </template>
@@ -52,11 +63,13 @@ export default {
     }
   },
   methods: {
-    uploadFile(file) {
-      this.files = [...this.files, file];
+    uploadFile(file, fileList) {
+      this.files = fileList;
+      this.$refs.provider.validate(fileList);
     },
     removeFile(remFile, fileList) {
       this.files = fileList;
+      this.$refs.provider.validate(fileList);
     }
   }
 };
