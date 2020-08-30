@@ -19,6 +19,7 @@ const state = {
     rating: "", //{ id: 0, title: ""}
     address: ""
   },
+  validate: false,
   ratings: []
 };
 
@@ -48,6 +49,33 @@ const mutations = {
   },
   deleteDateAndTime(state, index) {
     state.form.dateAndTimes.splice(index, 1);
+  },
+  setValidation(state, validate) {
+    state.validate = validate;
+  },
+  resetForm(state) {
+    Object.keys(state.form).forEach(key => {
+      switch (typeof state.form[key]) {
+        case "string": {
+          state.form[key] = "";
+          break;
+        }
+        case "boolean": {
+          state.form[key] = false;
+          break;
+        }
+        case "number": {
+          state.form[key] = 0;
+          break;
+        }
+        case "object": {
+          if (Array.isArray(state.form[key])) {
+            state.form[key] = [];
+            break;
+          }
+        }
+      }
+    });
   }
 };
 
