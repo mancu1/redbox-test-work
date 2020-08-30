@@ -4,22 +4,15 @@
       Фотография
     </div>
     <div>
-      <el-upload
+      <Uploader
         action="#"
         ref="upl"
         accept="image/*"
         list-type="picture-card"
         :auto-upload="false"
-        :on-change="
-          uplFile => {
-            this.files = [...this.files, uplFile];
-          }
-        "
-        :on-remove="
-          (remFile, fileList) => {
-            this.files = fileList;
-          }
-        "
+        :on-change="uploadFile"
+        :file-list="files"
+        :on-remove="removeFile"
       >
         <i slot="default" class="el-icon-camera dark-icon"></i>
         <div class="file-block mr-5" slot="file" slot-scope="{ file }">
@@ -35,19 +28,16 @@
             </span>
           </div>
         </div>
-      </el-upload>
+      </Uploader>
     </div>
   </el-col>
 </template>
 
 <script>
+import Uploader from "@/components/edted-el-uploader/Uploader";
 export default {
+  components: { Uploader },
   name: "PhotoUploadForm",
-  data() {
-    return {
-      fi: []
-    };
-  },
   computed: {
     files: {
       get() {
@@ -59,6 +49,14 @@ export default {
           value: newValue
         });
       }
+    }
+  },
+  methods: {
+    uploadFile(file) {
+      this.files = [...this.files, file];
+    },
+    removeFile(remFile, fileList) {
+      this.files = fileList;
     }
   }
 };
