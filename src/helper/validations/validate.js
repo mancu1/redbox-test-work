@@ -38,7 +38,7 @@ extend("time_before", {
     if (dayDiff < 0) {
       return true;
     } else {
-      return moment(start_time).diff(moment(end_time), "minute") <= 0;
+      return moment(start_time).diff(moment(end_time), "minute") < 0;
     }
   },
   message: "Время должно быть раньше времени начала"
@@ -51,7 +51,7 @@ extend("time_after", {
     if (dayDiff < 0) {
       return true;
     } else {
-      return moment(start_time).diff(moment(end_time), "minute") <= 0;
+      return moment(start_time).diff(moment(end_time), "minute") < 0;
     }
   },
   message: "Время должно быть позже времени начала"
