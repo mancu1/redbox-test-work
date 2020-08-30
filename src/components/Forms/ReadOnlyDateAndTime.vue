@@ -79,7 +79,7 @@ export default {
     }
   },
   watch: {
-    dateAndTime: val => {
+    dateAndTime(val) {
       this.$refs.provider.validate(val);
     }
   }
