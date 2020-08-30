@@ -64,5 +64,5 @@ extend("phone", {
     );
     return typeof phone === "string" && phoneRegExp.test(phone);
   },
-  message: "Телефон должен соответсвовать виду +7 (###) ###-##-##"
+  message: "Телефон должен соответсвовать виду +7 (9##) ###-##-##"
 });

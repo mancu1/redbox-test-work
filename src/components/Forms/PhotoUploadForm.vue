@@ -50,6 +50,11 @@ import Uploader from "@/components/edted-el-uploader/Uploader";
 export default {
   components: { Uploader },
   name: "PhotoUploadForm",
+  mounted() {
+    if (this.files.length > 0) {
+      this.$refs.provider.validate(this.files);
+    }
+  },
   computed: {
     files: {
       get() {
