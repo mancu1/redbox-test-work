@@ -35,11 +35,6 @@ extend("time_before", {
   params: ["end_time", "start_date", "end_date"],
   validate(start_time, { end_time, start_date, end_date }) {
     const dayDiff = moment(start_date).diff(moment(end_date), "h");
-    console.log(
-      "time_before",
-      dayDiff,
-      moment(start_time).diff(moment(end_time), "minute")
-    );
     if (dayDiff < 0) {
       return true;
     } else {
@@ -53,11 +48,6 @@ extend("time_after", {
   params: ["start_time", "start_date", "end_date"],
   validate(end_time, { start_time, start_date, end_date }) {
     const dayDiff = moment(start_date).diff(moment(end_date), "h");
-    console.log(
-      "start_time",
-      dayDiff,
-      moment(start_time).diff(moment(end_time), "minute")
-    );
     if (dayDiff < 0) {
       return true;
     } else {

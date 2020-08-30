@@ -127,7 +127,6 @@ export default {
         this.uploadFiles = this.uploadFiles.map(file => {
           if (!file.url && file.raw) {
             try {
-              console.log(file.raw);
               file.url = URL.createObjectURL(file.raw);
             } catch (err) {
               console.error("[Element Error][Upload]", err);
@@ -163,7 +162,6 @@ export default {
 
       if (this.listType === "picture-card" || this.listType === "picture") {
         try {
-          console.log(file.raw);
           file.url = URL.createObjectURL(rawFile);
         } catch (err) {
           console.error("[Element Error][Upload]", err);
