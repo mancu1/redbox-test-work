@@ -32,7 +32,7 @@ export default {
   name: "ConfirmForm",
   methods: {
     submit() {
-      this.validate(() => {
+      this.validate().then(() => {
         this.$store.commit("setValidation", true);
         this.goNext();
       });
