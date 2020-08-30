@@ -14,7 +14,7 @@
           >
             <el-input
               type="tel"
-              v-mask="'+7 (9##) ###-##-##'"
+              v-mask="'+7 (###) ###-##-##'"
               v-model="phoneNumber"
             ></el-input>
           </el-form-item>
