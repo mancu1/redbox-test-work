@@ -325,7 +325,7 @@ export default {
     return (
       <div>
         {this.listType === "picture-card" ? uploadList : ""}
-        {this.limit < this.uploadFiles.length
+        {this.limit > this.uploadFiles.length
           ? this.$slots.trigger
             ? [uploadComponent, this.$slots.default]
             : uploadComponent
