@@ -25,7 +25,8 @@ const state = {
 
 const getters = {
   getForm: state => state.form,
-  getRatings: state => state.ratings
+  getRatings: state => state.ratings,
+  isValidate: state => state.validate
 };
 
 const mutations = {
