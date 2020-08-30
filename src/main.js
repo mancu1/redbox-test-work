@@ -9,6 +9,15 @@ import "@/style/colors.css";
 import "@/style/font.css";
 import "@/style/margins.css";
 
+import "@/helper/validations/validate";
+import "@/helper/filters/filters";
+
+import { ValidationProvider, ValidationObserver } from "vee-validate";
+
+Vue.component("ValidationProvider", ValidationProvider);
+Vue.component("ValidationObserver", ValidationObserver);
+// ...
+
 import VueTheMask from "vue-the-mask";
 Vue.use(VueTheMask);
 

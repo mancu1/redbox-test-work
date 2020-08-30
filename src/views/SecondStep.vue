@@ -41,7 +41,7 @@
                   <span
                     v-for="(date, index) in form.dateAndTimes"
                     v-bind:key="index"
-                    >{{ date.startDate }}
+                    >{{ date.startDate | bestDate }}
                   </span>
                 </div>
                 <div class="description">
@@ -49,7 +49,7 @@
                   <span
                     v-for="(date, index) in form.dateAndTimes"
                     v-bind:key="index"
-                    >{{ date.startTime }}
+                    >{{ date.startTime | bestTime }}
                   </span>
                 </div>
               </div>
