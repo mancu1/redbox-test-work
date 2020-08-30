@@ -8,7 +8,9 @@
       </el-col>
 
       <el-col class="mt-1" :sm="12" :md="10" :lg="7">
-        <el-button class="full-field-w text-field-label form-btn-filled"
+        <el-button
+          @click="submit"
+          class="full-field-w text-field-label form-btn-filled"
           >Далее</el-button
         >
       </el-col>
@@ -18,7 +20,12 @@
 
 <script>
 export default {
-  name: "ConfirmForm"
+  name: "ConfirmForm",
+  methods: {
+    submit() {
+      this.$router.push("/result");
+    }
+  }
 };
 </script>
 
