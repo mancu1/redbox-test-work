@@ -11,6 +11,7 @@
           :error="errors[0]"
         >
           <Uploader
+            :limit="1"
             action="#"
             ref="upl"
             accept="image/*"
