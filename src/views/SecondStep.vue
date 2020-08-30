@@ -107,7 +107,9 @@
           </el-col>
 
           <el-col class="mt-1" :sm="12" :md="10" :lg="7">
-            <el-button class="full-field-w text-field-label form-btn-filled"
+            <el-button
+              @click="confirm"
+              class="full-field-w text-field-label form-btn-filled"
               >Отправить на модерацию</el-button
             >
           </el-col>
@@ -130,6 +132,15 @@ export default {
   methods: {
     goBack() {
       this.$router.push("/");
+    },
+    confirm() {
+      this.$notify({
+        type: "success",
+        message: "Успешно загрузили",
+        title: "Успех"
+      });
+      this.goBack();
+      this.$store.commit("resetForm");
     }
   }
 };
