@@ -1,5 +1,4 @@
 import fetchRatings from "@/helper/fetchs/fetchRatings";
-import { Vue } from "vue";
 
 const state = {
   form: {
@@ -37,9 +36,6 @@ const mutations = {
   },
   setNewDateAndTime(state, { fieldName, value }) {
     state.form.newDateAndTimes[fieldName] = value;
-  },
-  setDateAndTime(state, { index, fieldName, value }) {
-    Vue.set(state.form.dateAndTimes[index], fieldName, value);
   },
   addDateAndTime(state) {
     state.form.dateAndTimes.splice(0, 0, state.form.newDateAndTimes);
