@@ -66,3 +66,12 @@ extend("phone", {
   },
   message: "Телефон должен соответсвовать виду +7 (###) ###-##-##"
 });
+
+extend("requiredPhoto", {
+  ...rules.required,
+  message: "Фотография обязательна"
+});
+extend("requiredDate", {
+  ...rules.required,
+  message: "Дата обязательна должна быть добавлена"
+});

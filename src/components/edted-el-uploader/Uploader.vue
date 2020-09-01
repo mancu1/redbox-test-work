@@ -316,7 +316,8 @@ export default {
         "on-remove": this.handleRemove,
         "http-request": this.httpRequest
       },
-      ref: "upload-inner"
+      ref: "upload-inner",
+      style: this.limit <= this.uploadFiles.length ? "display:none" : ""
     };
 
     const trigger = this.$slots.trigger || this.$slots.default;
@@ -325,11 +326,9 @@ export default {
     return (
       <div>
         {this.listType === "picture-card" ? uploadList : ""}
-        {this.limit > this.uploadFiles.length
-          ? this.$slots.trigger
-            ? [uploadComponent, this.$slots.default]
-            : uploadComponent
-          : ""}
+        {this.$slots.trigger
+          ? [uploadComponent, this.$slots.default]
+          : uploadComponent}
         {this.$slots.tip}
         {this.listType !== "picture-card" ? uploadList : ""}
       </div>

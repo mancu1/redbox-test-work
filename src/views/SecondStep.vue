@@ -6,7 +6,7 @@
       </div>
     </el-col>
     <el-col class="content" :span="24">
-      <el-col class="form-block mb-6">
+      <el-col class="form-block mb-0">
         <el-card shadow="always">
           <div class="form-title d-f align-center">
             <i class="el-icon-warning mr-2 large-icon"></i>
@@ -19,12 +19,12 @@
       </el-col>
       <el-col class="form-block">
         <el-row type="flex">
-          <div class="mr-2 box">
-            <div class="text-field-label box-text">
+          <div class="box">
+            <div class="box-text">
               {{ form.rating }}
             </div>
           </div>
-          <el-col class="mr-3" :span="8">
+          <el-col class="mr-3 mt-n1" :span="8">
             <div class=" d-f flex-column">
               <div>
                 <div class="sub-title">
@@ -33,11 +33,11 @@
               </div>
               <div class="mt-3">
                 <div class="description mb-1">
-                  <i class="el-icon-location-outline mr-1"></i>
+                  <i class="description-icon el-icon-location-outline mr-1"></i>
                   <span> {{ form.address }}</span>
                 </div>
                 <div class="description mb-1">
-                  <i class="el-icon-date mr-1"></i>
+                  <i class="description-icon el-icon-date mr-1"></i>
                   <span
                     v-for="(date, index) in form.dateAndTimes"
                     v-bind:key="index"
@@ -45,7 +45,7 @@
                   </span>
                 </div>
                 <div class="description">
-                  <i class="el-icon-time mr-1"></i>
+                  <i class="description-icon el-icon-time mr-1"></i>
                   <span
                     v-for="(date, index) in form.dateAndTimes"
                     v-bind:key="index"
@@ -57,19 +57,19 @@
                 <div class="description-title">Контакты</div>
                 <div class="mt-1">
                   <div class="small-description mb-1">
-                    <i class="description el-icon-phone mr-1"></i>
+                    <i class="description-icon el-icon-phone mr-1"></i>
                     <span>{{ form.phoneNumber }}</span>
                   </div>
                   <div class="small-description">
-                    <i class="description el-icon-message mr-1"></i>
+                    <i class="description-icon el-icon-message mr-1"></i>
                     <span>{{ form.email }}</span>
                   </div>
                 </div>
               </div>
-              <div class="mt-3">
-                <div class="description-title">{{ form.organize }}</div>
+              <div class="mt-2">
+                <div class="organization">{{ form.organize }}</div>
                 <div class="mt-1">
-                  <div class="small-description">
+                  <div class="under-organization">
                     <span> Организатор мероприятия</span>
                   </div>
                 </div>
@@ -80,7 +80,7 @@
             <div class=" d-f flex-column">
               <img
                 v-if="form.photos.length > 0"
-                style="background-size: cover; width: 100%;"
+                style="background-size: cover; width: 100%; border-radius: 5px"
                 :src="form.photos[0].url"
                 :alt="form.photos[0].name"
               />
@@ -95,9 +95,9 @@
           </el-col>
         </el-row>
       </el-col>
-      <el-col class="form-block">
+      <el-col class="form-block mt-5">
         <el-row :gutter="40">
-          <el-col class="mt-1" :sm="12" :md="10" :lg="7">
+          <el-col :sm="12" :md="10" :lg="7">
             <el-button
               @click="goBack"
               class="full-field-w text-field-label form-btn"
@@ -106,7 +106,7 @@
             >
           </el-col>
 
-          <el-col class="mt-1" :sm="12" :md="10" :lg="7">
+          <el-col :sm="12" :md="10" :lg="7">
             <el-button
               @click="confirm"
               class="full-field-w text-field-label form-btn-filled"

@@ -63,6 +63,11 @@
     color: #211536;
 }
 
+.description-icon {
+    font-size: 22px !important;
+    color: var(--light-fill-color) !important;
+}
+
 .description {
     font-family: Montserrat, sans-serif;
     font-style: normal;
@@ -70,7 +75,8 @@
     font-size: 18px;
     line-height: 22px;
 
-    color: var(--light-fill-color);
+    color: rgba(33, 21, 54,0.6) !important;
+
 }
 
 .small-description {
@@ -79,10 +85,31 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
+
+    color: rgba(33, 21, 54,0.6) !important;
+}
+
+.organization {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
     /* identical to box height */
 
+    color: #211536;
+}
+.under-organization {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
 
-    color: var(--light-fill-color);
+    color: #8E69CC;
+
 }
 
 .description-long {

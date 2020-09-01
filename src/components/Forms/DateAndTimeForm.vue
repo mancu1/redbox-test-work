@@ -85,12 +85,12 @@
             </ValidationProvider>
           </el-col>
         </el-row>
-        <el-row class="mt-3">
+        <el-row class="mt-1 mb-2">
           <el-col>
             <el-button
               class="text-field-label form-btn"
               plain
-              @click="validate().then(addDateAndTime)"
+              @click="pressButton(validate)"
             >
               + Добавить дату
             </el-button>
@@ -153,6 +153,11 @@ export default {
   methods: {
     addDateAndTime() {
       this.$store.commit("addDateAndTime");
+    },
+    pressButton(validate) {
+      validate().then(res => {
+        if (res) this.addDateAndTime();
+      });
     }
   }
 };

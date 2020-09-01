@@ -4,7 +4,7 @@
       Фотография
     </div>
     <div>
-      <ValidationProvider ref="provider" rules="required">
+      <ValidationProvider ref="provider" rules="requiredPhoto">
         <el-form-item
           label-width="0"
           slot-scope="{ errors }"
@@ -21,7 +21,13 @@
             :file-list="files"
             :on-remove="removeFile"
           >
-            <i slot="default" class="el-icon-camera dark-icon"></i>
+            <template slot="default">
+              <img
+                class="mt-4"
+                :src="require('@/assets/icons/photoLoaderIcon.png')"
+                alt="PhotoLoaderGroup"
+              />
+            </template>
             <div class="file-block mr-5" slot="file" slot-scope="{ file }">
               <div
                 class="bg-img"
@@ -39,6 +45,9 @@
               </div>
             </div>
           </Uploader>
+          <div class="under-photo">
+            Главная фотография (обложка мероприятия)
+          </div>
         </el-form-item>
       </ValidationProvider>
     </div>
@@ -103,7 +112,19 @@ export default {
 
 .el-upload-list__item {
   overflow: unset !important;
-  margin-right: 20px !important;
+  width: 126px !important;
+  height: 126px !important;
+  margin: 0 !important;
+}
+
+.el-upload--picture-card {
+  margin-bottom: 15px;
+  width: 126px;
+  height: 126px;
+  border: 3px solid var(--light-border-color);
+}
+.el-upload--picture-card:hover {
+  border: 3px solid var(--medium-boder-color);
 }
 
 .bg-img {
@@ -114,5 +135,19 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+}
+
+.under-photo {
+  max-width: 126px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+  /* or 140% */
+
+  color: #211536;
+
+  opacity: 0.7;
 }
 </style>

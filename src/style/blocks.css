@@ -20,7 +20,7 @@ body {
 }
 
 .form-block {
-    margin-bottom: 40px;
+    margin-bottom: 18px;
 }
 
 .d-f {
@@ -39,6 +39,11 @@ body {
     align-items: center;
 }
 
+.el-card {
+    height: 90px !important;
+    margin-bottom: 58px !important;
+}
+
 .absolute-button-parent {
     position: relative;
 }
@@ -53,7 +58,7 @@ body {
 }
 
 .added-date-block {
-    padding: 25px 20px;
+    padding: 22px 28px;
     background-color: rgba(205, 177, 251, 0.1);
 }
 
@@ -63,6 +68,7 @@ body {
     color: #ff2998 !important;
 }
 .box {
+    margin-right: 17px;
     width: 48px;
     height: 48px;
     background-color: #351767;
@@ -71,6 +77,12 @@ body {
     justify-content: center;
 }
 .box-text {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
     align-self: center;
     color: #ffffff !important;
 }
@@ -111,6 +123,7 @@ body {
 }
 .form-btn:hover {
     border: 1px solid var(--medium-boder-color);
+    color: var(--medium-boder-color)!important;
     border-color: var(--medium-boder-color) !important;
 }
 .form-btn:focus {

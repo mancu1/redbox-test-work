@@ -1,5 +1,5 @@
 <template>
-  <el-col class="form-block mb-5">
+  <el-col class="form-block mb-3">
     <div>
       <div class="text-field-label mb-1">Подробное описание</div>
       <ValidationProvider rules="required">

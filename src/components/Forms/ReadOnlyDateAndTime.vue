@@ -1,11 +1,12 @@
 <template>
   <el-col class="form-block mb-0">
-    <ValidationProvider ref="provider" rules="required">
+    <ValidationProvider ref="provider" rules="requiredDate">
       <el-form-item label-width="0" slot-scope="{ errors }" :error="errors[0]">
         <el-col
-          class="mb-4 added-date-block"
-          v-for="(dateAndTimeObj, index) in dateAndTime"
-          :key="index"
+          v-for="(dateAndTimeObj, ind) in dateAndTime"
+          :key="ind"
+          class="added-date-block"
+          :class="dateAndTime.length - 1 !== ind ? 'mb-4 ' : 'mb-1'"
         >
           <el-col>
             <el-row type="flex" justify="center" :gutter="20">
@@ -52,7 +53,7 @@
               </el-col>
             </el-row>
           </el-col>
-          <div class="absolute-button-parent mt-n4 mr-n3">
+          <div class="absolute-button-parent mt-n4 mr-n4">
             <span @click="deleteDateAndTime(index)" class="absolute-button">
               <i class="dark-icon el-icon-error"></i>
             </span>

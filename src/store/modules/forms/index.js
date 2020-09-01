@@ -1,4 +1,5 @@
 import fetchRatings from "@/helper/fetchs/fetchRatings";
+import moment from "moment";
 
 const state = {
   form: {
@@ -11,10 +12,12 @@ const state = {
     eventDescription: "",
     dateAndTimes: [],
     newDateAndTimes: {
-      startDate: new Date(),
-      startTime: new Date(),
-      endDate: new Date(),
-      endTime: new Date()
+      startDate: moment().toDate(),
+      startTime: moment().toDate(),
+      endDate: moment().toDate(),
+      endTime: moment()
+        .add(2, "m")
+        .toDate()
     },
     rating: "", //{ id: 0, title: ""}
     address: ""
@@ -42,10 +45,12 @@ const mutations = {
   addDateAndTime(state) {
     state.form.dateAndTimes.splice(0, 0, state.form.newDateAndTimes);
     state.form.newDateAndTimes = {
-      startDate: new Date(),
-      startTime: new Date(),
-      endDate: new Date(),
-      endTime: new Date()
+      startDate: moment().toDate(),
+      startTime: moment().toDate(),
+      endDate: moment().toDate(),
+      endTime: moment()
+        .add(2, "m")
+        .toDate()
     };
   },
   deleteDateAndTime(state, index) {
